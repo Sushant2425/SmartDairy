@@ -116,7 +116,7 @@ public class DashboardActivity extends AppCompatActivity {
         Log.d("Firebase", "Mobile number: " + mobile);
 
         DatabaseReference dairyRef = FirebaseDatabase.getInstance()
-                .getReference("Dairy").child("Users").child(mobile).child("dairyInfo");
+                .getReference("Dairy").child("Users").child(mobile).child("DairyInfo");
         Log.d("Firebase", "Database path: " + dairyRef.toString());
 
         dairyRef.get().addOnSuccessListener(snapshot -> {

@@ -30,6 +30,13 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
 
+        Button btnMilkCollection = view.findViewById(R.id.btnMilkCollection);
+        btnMilkCollection.setOnClickListener(v -> {
+            // Launch MilkCollectionActivity
+            Intent intent = new Intent(getActivity(), MilkCollectionActivity.class);
+            startActivity(intent);
+        });
+
         return view;
     }
 }

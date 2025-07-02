@@ -16,6 +16,20 @@
         android:textColor="#00796B"
         android:layout_centerInParent="true" />
 
+
+    <!-- Milk Collection Button -->
+    <Button
+        android:id="@+id/btnMilkCollection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🥛 Milk Collection"
+        android:layout_above="@id/btnAddFarmer"
+        android:backgroundTint="#2196F3"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:padding="14dp" />
+
     <!-- Add Farmer Button at Bottom -->
     <Button
         android:id="@+id/btnAddFarmer"

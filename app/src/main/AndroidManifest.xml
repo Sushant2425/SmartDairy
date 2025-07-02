@@ -15,6 +15,9 @@
         android:theme="@style/Theme.SmartDairy"
         tools:targetApi="31">
         <activity
+            android:name=".MilkCollectionActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddFarmersActivity"
             android:exported="false" />
         <activity
