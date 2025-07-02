@@ -1,4 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:padding="20dp"-->
+<!--    android:background="#FFFFFF">-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
+
+<!--        &lt;!&ndash; Auto Date &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/tvDate1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Date: 2025-07-01"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:paddingBottom="8dp" />-->
+
+<!--        &lt;!&ndash; Auto Session &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/tvSession1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Session: Morning"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:paddingBottom="16dp" />-->
+
+<!--        &lt;!&ndash; Milk Code &ndash;&gt;-->
+<!--        <EditText-->
+<!--            android:id="@+id/etMilkCode1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Enter Milk Code"-->
+<!--            android:inputType="text"-->
+<!--            android:padding="10dp" />-->
+
+<!--        &lt;!&ndash; Auto Milk Type &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/tvMilkType1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Milk Type: "-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="#00796B"-->
+<!--            android:paddingTop="12dp"-->
+<!--            android:paddingBottom="12dp" />-->
+
+<!--        &lt;!&ndash; Milk Quantity (Liters + Milliliters as decimal) &ndash;&gt;-->
+<!--        <EditText-->
+<!--            android:id="@+id/etMilkQuantity1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Enter Milk Quantity (Liters)"-->
+<!--            android:inputType="numberDecimal"-->
+<!--            android:padding="10dp" />-->
+
+<!--        &lt;!&ndash; Fat Sample Bottle Code &ndash;&gt;-->
+<!--        <EditText-->
+<!--            android:id="@+id/etFatSampleCode1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Fat Sample Bottle Code"-->
+<!--            android:inputType="text"-->
+<!--            android:padding="10dp"-->
+<!--            android:layout_marginTop="16dp" />-->
+
+<!--        &lt;!&ndash; Fat Value (Optional) &ndash;&gt;-->
+<!--        <EditText-->
+<!--            android:id="@+id/etFatValue1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Enter Fat % (optional)"-->
+<!--            android:inputType="numberDecimal"-->
+<!--            android:padding="10dp"-->
+<!--            android:layout_marginTop="8dp" />-->
+
+<!--        &lt;!&ndash; Save Button &ndash;&gt;-->
+<!--        <Button-->
+<!--            android:id="@+id/btnSaveMilkCollection1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="💾 Save Collection"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:backgroundTint="#4CAF50"-->
+<!--            android:layout_marginTop="24dp"-->
+<!--            android:padding="14dp" />-->
+
+<!--    </LinearLayout>-->
+<!--</ScrollView>-->
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,7 +109,7 @@
             android:id="@+id/tvDate1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date: 2025-07-01"
+            android:text="Date: "
             android:textSize="16sp"
             android:textStyle="bold"
             android:paddingBottom="8dp" />
@@ -25,7 +119,7 @@
             android:id="@+id/tvSession1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Session: Morning"
+            android:text="Session: "
             android:textSize="16sp"
             android:textStyle="bold"
             android:paddingBottom="16dp" />
@@ -39,6 +133,16 @@
             android:inputType="text"
             android:padding="10dp" />
 
+        <!-- Farmer Name -->
+        <EditText
+            android:id="@+id/etFarmerName1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Farmer Name (auto)"
+            android:inputType="text"
+            android:padding="10dp"
+            android:layout_marginTop="10dp" />
+
         <!-- Auto Milk Type -->
         <TextView
             android:id="@+id/tvMilkType1"
@@ -50,7 +154,7 @@
             android:paddingTop="12dp"
             android:paddingBottom="12dp" />
 
-        <!-- Milk Quantity (Liters + Milliliters as decimal) -->
+        <!-- Milk Quantity -->
         <EditText
             android:id="@+id/etMilkQuantity1"
             android:layout_width="match_parent"
@@ -69,7 +173,7 @@
             android:padding="10dp"
             android:layout_marginTop="16dp" />
 
-        <!-- Fat Value (Optional) -->
+        <!-- Fat Value -->
         <EditText
             android:id="@+id/etFatValue1"
             android:layout_width="match_parent"
@@ -89,6 +193,5 @@
             android:backgroundTint="#4CAF50"
             android:layout_marginTop="24dp"
             android:padding="14dp" />
-
     </LinearLayout>
 </ScrollView>
