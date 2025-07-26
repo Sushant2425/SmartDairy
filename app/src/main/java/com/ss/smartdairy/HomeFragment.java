@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +23,12 @@ public class HomeFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        TextView txtPendingFat = view.findViewById(R.id.textPendingFatReport);
+        txtPendingFat.setOnClickListener(v -> {
+            Intent i = new Intent(requireContext(), PendingFatEntryActivity.class);
+            startActivity(i);
+        });
 
         Button btnAddFarmer = view.findViewById(R.id.btnAddFarmer);
         btnAddFarmer.setOnClickListener(v -> {

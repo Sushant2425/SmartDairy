@@ -52,7 +52,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -63,6 +63,8 @@ public class DashboardActivity extends AppCompatActivity {
 
     LinearLayout navHome, navReports, navProfile;
     TextView tvDairyName;
+    ViewPager2 viewPager;
+    DashboardAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,27 +74,27 @@ public class DashboardActivity extends AppCompatActivity {
         navHome = findViewById(R.id.nav_home);
         navReports = findViewById(R.id.nav_reports);
         navProfile = findViewById(R.id.nav_profile);
-        tvDairyName = findViewById(R.id.tvDairyName);  // ✅ Make sure this exists in your layout
+        tvDairyName = findViewById(R.id.tvDairyName);
+        viewPager = findViewById(R.id.viewPager);
 
-        if (navHome == null || navReports == null || navProfile == null || tvDairyName == null) {
-            Toast.makeText(this, "Layout not initialized properly", Toast.LENGTH_LONG).show();
-            return;
-        }
+        adapter = new DashboardAdapter(this);
+        viewPager.setAdapter(adapter);
 
-        loadFragment(new HomeFragment());
+        // Tab click change fragment
+        navHome.setOnClickListener(v -> viewPager.setCurrentItem(0));
+        navReports.setOnClickListener(v -> viewPager.setCurrentItem(1));
+        navProfile.setOnClickListener(v -> viewPager.setCurrentItem(2));
 
-        navHome.setOnClickListener(v -> loadFragment(new HomeFragment()));
-        navReports.setOnClickListener(v -> loadFragment(new ReportsFragment()));
-        navProfile.setOnClickListener(v -> loadFragment(new ProfileFragment()));
+        // Optional: Handle swipe changes (for highlighting tab if needed later)
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                // Optional: tab highlight logic
+            }
+        });
 
-        loadDairyInfo(); // ✅ Load Firebase Dairy info into the top TextView
-    }
-
-    private void loadFragment(Fragment fragment) {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.frame_container, fragment)
-                .commit();
+        loadDairyInfo(); // Load top dairy name
     }
 
     private void loadDairyInfo() {
@@ -111,25 +113,20 @@ public class DashboardActivity extends AppCompatActivity {
         }
 
         if (mobile.startsWith("+91")) {
-            mobile = mobile.substring(3); // Remove +91
+            mobile = mobile.substring(3);
         }
-        Log.d("Firebase", "Mobile number: " + mobile);
 
         DatabaseReference dairyRef = FirebaseDatabase.getInstance()
-                .getReference("Dairy").child("Users").child(mobile).child("DairyInfo");
-        Log.d("Firebase", "Database path: " + dairyRef.toString());
+                .getReference("Dairy").child("User").child(mobile).child("DairyInfo");
 
         dairyRef.get().addOnSuccessListener(snapshot -> {
             if (snapshot.exists()) {
-                Log.d("FirebaseData", "Data: " + snapshot.getValue().toString());
                 String dairyName = snapshot.child("dairyName").getValue(String.class);
                 tvDairyName.setText(dairyName != null ? dairyName : "Smart Dairy");
             } else {
-                Log.d("FirebaseData", "No data found at path");
                 tvDairyName.setText("Smart Dairy");
             }
         }).addOnFailureListener(e -> {
-            Log.e("FirebaseError", "Error: " + e.getMessage());
             Toast.makeText(this, "Error loading dairy info: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         });
     }

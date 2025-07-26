@@ -18,6 +18,19 @@
 
 
     <!-- Milk Collection Button -->
+
+    <TextView
+        android:id="@+id/textPendingFatReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="#EEEEEE"
+        android:padding="16dp"
+        android:text="🧪 Pending Fat Entry Report"
+        android:textColor="#7B1FA2"
+        android:textSize="18sp" />
+
     <Button
         android:id="@+id/btnMilkCollection"
         android:layout_width="match_parent"

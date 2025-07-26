@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_rate_chart"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <!-- Row: Cow/Buffalo Radio + Select Date -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <RadioGroup
+            android:id="@+id/radioGroupType"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioCow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cow"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/radioBuffalo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buffalo"
+                android:layout_marginStart="16dp" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnPickDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Date" />
+    </LinearLayout>
+
+    <!-- Rate Date Info -->
+    <TextView
+        android:id="@+id/textRateDateStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rates from: -"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        android:paddingBottom="8dp" />
+
+    <!-- FAT-Rate RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewRates"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingBottom="12dp" />
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/btnSaveRates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Rates"
+        android:textAllCaps="false"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF" />
+</LinearLayout>

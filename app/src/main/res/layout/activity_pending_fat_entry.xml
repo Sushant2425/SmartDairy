@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="फॅट टक्केवारी अपडेट"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etMilkCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="मिल्क कोड टाका"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etFatSampleCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="फॅट सॅम्पल कोड टाका"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="तारीख (YYYY-MM-DD)"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/etSession"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="सत्र (morning/evening)"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/tvMilkType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="दुधाचा प्रकार: "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvFarmerMobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="शेतकरी मोबाइल: "
+        android:textSize="16sp" />
+
+
+
+    <EditText
+        android:id="@+id/etFatValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="फॅट टक्केवारी टाका (उदा., 3.5)"
+        android:inputType="numberDecimal" />
+
+
+
+    <Button
+        android:id="@+id/btnUpdateFat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="फॅट आणि रक्कम अपडेट करा" />
+
+</LinearLayout>

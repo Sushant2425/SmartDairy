@@ -1,0 +1,77 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📋 Select fields to include in PDF"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"/>
+
+        <CheckBox
+            android:id="@+id/checkName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:checked="false" />
+
+        <CheckBox
+            android:id="@+id/checkMobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile Number"
+            android:checked="false" />
+
+        <CheckBox
+            android:id="@+id/checkAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:checked="false" />
+
+        <CheckBox
+            android:id="@+id/checkHasCow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Has Cow"
+            android:checked="false" />
+
+        <CheckBox
+            android:id="@+id/checkHasBuffalo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Has Buffalo"
+            android:checked="false"/>
+
+        <CheckBox
+            android:id="@+id/checkCowMilkCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cow Milk Code"
+            android:checked="false"/>
+
+        <CheckBox
+            android:id="@+id/checkBuffaloMilkCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buffalo Milk Code"
+            android:checked="false"/>
+
+
+        <Button
+            android:id="@+id/btnGenerateFarmerReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Generate PDF"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#00796B"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+</ScrollView>
