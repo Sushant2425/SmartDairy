@@ -54,6 +54,12 @@
         android:text="शेतकरी मोबाइल: "
         android:textSize="16sp" />
 
+    <TextView
+        android:id="@+id/tvMilkQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="दुध प्रमाण (लिटरमध्ये): "
+        android:textSize="16sp" />
 
 
     <EditText
@@ -63,6 +69,19 @@
         android:hint="फॅट टक्केवारी टाका (उदा., 3.5)"
         android:inputType="numberDecimal" />
 
+    <TextView
+        android:id="@+id/tvFatRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="फॅट दर (प्रति लिटर): "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvTotalAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="एकूण रक्कम: "
+        android:textSize="16sp" />
 
 
     <Button
@@ -70,5 +89,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="फॅट आणि रक्कम अपडेट करा" />
-
 </LinearLayout>
