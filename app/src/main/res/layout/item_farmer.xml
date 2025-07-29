@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardFarmer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:background="#FFFFFF"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header with Name and Actions -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvFarmerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Farmer Name"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A237E"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tvFarmerMobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+91 9876543210"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:drawableStart="@android:drawable/ic_menu_call"
+                    android:drawablePadding="6dp" />
+
+            </LinearLayout>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnCall"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/ic_menu_call"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Call Farmer" />
+
+                <ImageButton
+                    android:id="@+id/btnEdit"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/ic_menu_edit"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Edit Farmer" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Address -->
+        <TextView
+            android:id="@+id/tvFarmerAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Farmer Address"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:drawableStart="@android:drawable/ic_dialog_map"
+            android:drawablePadding="8dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Animals and Milk Codes Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Animals -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Animals"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tvAnimals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cow &amp; Buffalo"
+                    android:textSize="14sp"
+                    android:textColor="#4CAF50"
+                    android:textStyle="bold"
+                    android:background="@drawable/rounded_background"
+                    android:padding="6dp" />
+
+            </LinearLayout>
+
+            <!-- Milk Codes -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Milk Codes"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tvMilkCodes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cow: 112 | Buffalo: 230"
+                    android:textSize="12sp"
+                    android:textColor="#FF9800"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

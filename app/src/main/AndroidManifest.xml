@@ -15,6 +15,12 @@
         android:theme="@style/Theme.SmartDairy"
         tools:targetApi="31">
         <activity
+            android:name=".ViewAllFarmersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditFarmersActivity"
+            android:exported="false" />
+        <activity
             android:name=".PendingFatEntryActivity"
             android:exported="false" />
         <activity

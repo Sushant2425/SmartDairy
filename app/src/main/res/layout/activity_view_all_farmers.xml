@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#5767CA"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="#FFFFFF" />
+
+    <!-- Main Content -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- RecyclerView for Farmers -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewFarmers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:clipToPadding="false"
+            android:scrollbars="vertical"
+            android:visibility="visible" />
+
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="#5767CA"
+            android:visibility="gone" />
+
+        <!-- No Farmers Message - Properly Structured -->
+        <LinearLayout
+            android:id="@+id/tvNoFarmers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp"
+            android:visibility="gone">
+
+            <!-- Empty State Icon -->
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@android:drawable/ic_menu_search"
+                android:alpha="0.4"
+                android:layout_marginBottom="24dp"
+                android:contentDescription="No farmers icon" />
+
+            <!-- Main Message -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Farmers Found"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#5767CA"
+                android:layout_marginBottom="12dp"
+                android:gravity="center" />
+
+            <!-- Sub Message -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start by adding your first farmer to begin managing your dairy"
+                android:textSize="16sp"
+                android:textColor="#999999"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"
+                android:lineSpacingExtra="4dp" />
+
+            <!-- Add Farmer Button (Optional) -->
+            <Button
+                android:id="@+id/btnAddFirstFarmer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Farmer"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#5767CA"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="12dp"
+                android:drawableStart="@android:drawable/ic_menu_add"
+                android:drawablePadding="8dp"
+                app:cornerRadius="8dp"
+                android:elevation="2dp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

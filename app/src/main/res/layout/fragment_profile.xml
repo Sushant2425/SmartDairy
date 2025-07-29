@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#F5F5F5"
     android:padding="16dp">
 
     <LinearLayout
@@ -10,84 +11,269 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Dairy Info Section -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dairy Profile"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_marginBottom="16dp" />
-
-        <TextView
-            android:id="@+id/tvDairyName"
+        <!-- Header Section -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dairy Name:"
-            android:textSize="16sp"
-            android:textColor="#333333"
-            android:layout_marginBottom="8dp" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
 
-        <TextView
-            android:id="@+id/tvOwnerName"
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@android:drawable/ic_menu_myplaces"
+                android:background="@drawable/circle_background"
+                android:padding="12dp"
+                android:layout_marginEnd="16dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A237E" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manage your dairy profile"
+                    android:textSize="14sp"
+                    android:textColor="#666666" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Dairy Profile Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Owner Name:"
-            android:textSize="16sp"
-            android:textColor="#333333"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:background="#FFFFFF">
 
-        <TextView
-            android:id="@+id/tvPhone"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dairy Information"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A237E"
+                    android:drawableStart="@android:drawable/ic_dialog_info"
+                    android:drawablePadding="8dp"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Dairy Name -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="Dairy Name:"
+                        android:textSize="14sp"
+                        android:textColor="#666666"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvDairyName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Smart Dairy"
+                        android:textSize="14sp"
+                        android:textColor="#333333" />
+
+                </LinearLayout>
+
+                <!-- Owner Name -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="Owner Name:"
+                        android:textSize="14sp"
+                        android:textColor="#666666"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvOwnerName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Dairy Owner"
+                        android:textSize="14sp"
+                        android:textColor="#333333" />
+
+                </LinearLayout>
+
+                <!-- Phone -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="Phone:"
+                        android:textSize="14sp"
+                        android:textColor="#666666"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="+91 9876543210"
+                        android:textSize="14sp"
+                        android:textColor="#333333" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Settings Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Phone:"
-            android:textSize="16sp"
-            android:textColor="#333333"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:background="#FFFFFF">
 
-        <TextView
-            android:id="@+id/tvStartDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Start Date:"
-            android:textSize="16sp"
-            android:textColor="#333333"
-            android:layout_marginBottom="24dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
 
-        <!-- Divider -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#CCCCCC"
-            android:layout_marginBottom="24dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quick Actions"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A237E"
+                    android:drawableStart="@android:drawable/ic_menu_manage"
+                    android:drawablePadding="8dp"
+                    android:layout_marginBottom="16dp" />
 
-        <!-- Settings Options -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Settings"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_marginBottom="12dp" />
+                <!-- Rate Chart -->
+                <TextView
+                    android:id="@+id/tvRateChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@android:drawable/ic_menu_agenda"
+                    android:drawablePadding="12dp"
+                    android:text="Rate Chart"
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    android:padding="16dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginBottom="8dp" />
 
-        <!-- Rate Chart TextView (Clickable) -->
-        <TextView
-            android:id="@+id/tvRateChart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableStart="@android:drawable/ic_menu_agenda"
-            android:drawablePadding="10dp"
-            android:text="Rate Chart"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:padding="12dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginBottom="16dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Add Farmers -->
+                <TextView
+                    android:id="@+id/tvAddFarmers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@android:drawable/ic_menu_add"
+                    android:drawablePadding="12dp"
+                    android:text="Add Farmers"
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    android:padding="16dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginBottom="8dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Edit Farmers -->
+                <TextView
+                    android:id="@+id/tvEditFarmers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@android:drawable/ic_menu_edit"
+                    android:drawablePadding="12dp"
+                    android:text="Edit Farmers Details"
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    android:padding="16dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginBottom="8dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- View Farmers -->
+                <TextView
+                    android:id="@+id/tvViewFarmers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@android:drawable/ic_menu_view"
+                    android:drawablePadding="12dp"
+                    android:text="View All Farmers"
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    android:padding="16dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
         <!-- Logout Button -->
         <Button
@@ -96,8 +282,16 @@
             android:layout_height="wrap_content"
             android:text="Logout"
             android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:backgroundTint="#E53935"
             android:textColor="#FFFFFF"
-            android:padding="12dp" />
+            android:padding="16dp"
+            android:drawableStart="@android:drawable/ic_menu_close_clear_cancel"
+            android:drawablePadding="8dp"
+            app:cornerRadius="8dp"
+            android:elevation="2dp" />
+
     </LinearLayout>
+
 </ScrollView>
